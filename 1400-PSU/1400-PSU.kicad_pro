@@ -58,11 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "silk_edge_clearance|162120000|59559175|5ea82726-af51-4604-8269-ec4287e1de74|e24b1583-159c-4f0c-9691-6bbb5c9fcb9c",
-        "silk_over_copper|133310000|80914911|a5daf5e5-95c0-41f9-9468-5c88ab0f02ec|00000000-0000-0000-0000-000000000000",
-        "silk_over_copper|148578690|71060000|c68aed94-98b9-4afd-8345-c15a2401dca3|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -475,7 +471,7 @@
         "wire_width": 6
       },
       {
-        "bus_width": 12,
+        "bus_width": 20,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -483,13 +479,30 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "BATT_POS",
+        "name": "HI_POWER",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
+        "track_width": 2.0,
+        "via_diameter": 2.0,
+        "via_drill": 0.6,
+        "wire_width": 16
+      },
+      {
+        "bus_width": 8,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "MED_POWER",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "via_diameter": 1.0,
+        "via_drill": 0.6,
+        "wire_width": 8
       },
       {
         "bus_width": 12,
@@ -500,7 +513,7 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "RAW_Vcc",
+        "name": "SIGNAL",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
@@ -513,11 +526,83 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "-22_RAIL": "MED_POWER",
+      "Net-(A1-VIN)": "MED_POWER",
+      "Net-(D1-A)": "HI_POWER",
+      "Net-(D1-K)": "HI_POWER",
+      "Net-(D3-K)": "MED_POWER",
+      "Net-(D4-A)": "HI_POWER",
+      "Net-(F1-Pad2)": "HI_POWER",
+      "Net-(JP2-A)": "HI_POWER",
+      "Net-(U1-Driver_Collector)": "MED_POWER",
+      "Net-(U1-Switch_Emiiter)": "MED_POWER",
+      "POWER_BRICK": "HI_POWER"
+    },
     "netclass_patterns": [
       {
         "netclass": "Default",
         "pattern": ""
+      },
+      {
+        "netclass": "HI_POWER",
+        "pattern": "HI_POWER"
+      },
+      {
+        "netclass": "MED_POWER",
+        "pattern": "MED_POWER"
+      },
+      {
+        "netclass": "HI_POWER",
+        "pattern": "BATT_POS"
+      },
+      {
+        "netclass": "SIGNAL",
+        "pattern": "SIGNAL"
+      },
+      {
+        "netclass": "MED_POWER",
+        "pattern": "ARDUINO_5V"
+      },
+      {
+        "netclass": "HI_POWER",
+        "pattern": "POWER_BRICK"
+      },
+      {
+        "netclass": "SIGNAL",
+        "pattern": "LOW_BATT"
+      },
+      {
+        "netclass": "SIGNAL",
+        "pattern": "REALLY_LOW_BATT"
+      },
+      {
+        "netclass": "SIGNAL",
+        "pattern": "STANDBY"
+      },
+      {
+        "netclass": "SIGNAL",
+        "pattern": "ON_CHARGER"
+      },
+      {
+        "netclass": "MED_POWER",
+        "pattern": "12_RAIL"
+      },
+      {
+        "netclass": "MED_POWER",
+        "pattern": "-12_RAIL"
+      },
+      {
+        "netclass": "HI_POWER",
+        "pattern": "5_RAIL"
+      },
+      {
+        "netclass": "MED_POWER",
+        "pattern": "5_ALWAYS"
+      },
+      {
+        "netclass": "HI_POWER",
+        "pattern": "15_RAIL"
       }
     ]
   },
@@ -526,7 +611,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerber",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
