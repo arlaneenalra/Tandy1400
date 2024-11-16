@@ -22,47 +22,63 @@ in any way, shape, or form and is only published for potential review.
 ![Rev 1 circuit diagram](Tandy1400PSU-Rev1.png?raw=true "Rev1 PSU")
 ![Rev 1 board layout](Tandy1400PSU-Board-Rev1.png?raw=true "Rev1 PSU Board")
 
+# Solder Jumpers
+
+## JP1 ALWAYS_ON_5 and JP3 MCU_POWER
+In the original board, there is a 5V rail that listed as always on. If you cut the 2-1 configuration of these jumpers and resolder them in 2-3 the MCU is always powered and the 5_ALWAYS
+rail is powered off of the MCUs internal 5V linear regulator. I do not recommend this configuration, it is present primarily for experimentation.
+
+## JP3 LOW_BATT and JP4 REALLY_LOW_BATT
+There are two stages to the Tandy 1400s low battery behavior. The original PSU pulls these pins to ground when the battery is seen as fully charged. If you want to run without an Arduino
+just short these two jumpers and it should stop the machine from continuously reporting low battery.
+
 # Parts List
 
 ## Optional
-* 5v Arduino Nano (ATmega 328p based was used in prototype)
+* A1 - 5v Arduino Nano (ATmega 328p based was used in prototype)
 ** 2.54mm pin heade for the Arduino (28 pins)
-* D4 - 31DQ06 - Diode
 
-* J3 - EHR-15 and 14 ASEHSEH22K152 Jumpers - If you have an existing supply, this can be harvested off the old one.
-** https://www.digikey.com/en/products/detail/jst-sales-america-inc/EHR-15/527237
-** https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASEHSEH22K152/6009479
+* Charging and Battery - Experimental
+** D1, D4 - 31DQ06 - Diode - D4 may just be a jumper, my TP5100 modules didn't like being connected to the battery unpowered.
+** U6 - TP5100 Charging module - https://www.amazon.com/Charging-Management-Voltage-Regulator-Batteries/dp/B0C781VGYY
+** J1 - Jumper lead for battery connection. Size to match pack but should be able to handle at least 2A.
+** Q1 - IRF9540N P-Channel MOSFET in TO-220-3 - http://www.irf.com/product-info/datasheets/data/irf9540n.pdf
 
 ## Required
 * C1 - 100uF 50V
-* C2 - 220uF 50V
+* C2 - 47uF 50V
 * C3 - 220pf
 * C4 - 0.1uF
 * C5 - 22uF 25V
 * C6, C9 - 10uF 50V
 * C7 - 2.2uF 50V
 * C8 - 0.22uF
-* D1, D2 - 31DQ06 - 3A Power Diode
+* D2 - 31DQ06 - 3A Power Diode
+* D3 - 1N5819 - Schottky DO15 40V 1A 150C - This is like way overrated. I've been semi-successful with a 1N4148.
 * F1 - Keystone 3568 (Mini Automotive Fuse Holder) - https://www.digikey.com/en/products/detail/keystone-electronics/3568/2137306
 * F1 - 3Amp Mini Automotive fuse
 * J2 - CP-063AH-ND Barrel Jack Connector - https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/pj-063ah/2161208  
+* J3 - EHR-15 and 14 ASEHSEH22K152 Jumpers - If you have an existing supply, this can be harvested off the old one.
+** https://www.digikey.com/en/products/detail/jst-sales-america-inc/EHR-15/527237
+** https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASEHSEH22K152/6009479
 * L1 - 330uH Inductor
-* Q1 - IRF9540N P-Channel MOSFET in TO-220-3 - http://www.irf.com/product-info/datasheets/data/irf9540n.pdf
 * R1, R4 - 1k 1/4w
 * R2, R5, R8 - 10k 1/4w
-* R3 - 1 1/4w
+* R3 - 1 1/4w 
 * R6 - 20k 1/4w
 * R7, R9 - 150k 1/4w
-* RV1 - 4.7k Trimmer 3296Y-1-472 or equivalent - https://www.digikey.com/en/products/detail/bourns-inc/3296Y-1-472/2536015
+* RV1 - 4.7k Trimmer 3296Y-1-472 or equivalent - https://www.digikey.com/en/products/detail/bourns-inc/3296Y-1-472/2536015 you want one with the adjustment on top or facing to the outer edge of the board when installed.
 * SW1 - Z4418-ND - https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/A8L-21-12N2/1811713
+** I've adjusted the footprint so that it's theoretically possible to harvest the original if you have one.
 ** You might be able to harvest the switch off you're old supply, but the foot print is slightly different.
 * U1 - MC34063 in either PDIP-8 or SOIC-8 form.
 * U2 - MEZD41502A-C - 15V DC/DC boost converter (Digikey says it's obsolete, manufacturer didn't last I checked.) - https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MEZD41502A-C/6823857
 * U3 - MEZD72401A-G - Drop in replacement for a TO-220-3 LM7805 - https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MEZD72401A-G/6823842
+** This is a 7805 equivalent rated for 1A. You could theoretically put a 7805 here, but you'd need to keep in mind heat dissipation and efficiency.
 * U4 - LM340T-12 - Note: This is powered off of a 15V rail so you'll probably need an actual linear regulator.
+** DO NOT try to use an N7812-1PH in place of the LM340T-12, this part needs a minimum of 20V to produce a +12V supply and has been seen to dump 36V out when under-voltaged.
 * U5 - N7812-1PH - +/- 12V DC/DC Converter Used to generate -12V, cannot be used for +12V with a 15V supply. - https://www.digikey.com/en/products/detail/mean-well-usa-inc/N7812-1PH/22119016 
-** Keep a close eye on the pin-out for this one, the inductor goes down to match the board wiring.
-** DO NOT try to use this in place of the LM340T-12, this part needs 20V to produce a +12V supply and has been seen to dump 36V out when under-volted.
+** Keep a close eye on the pin-out for this one, the inductor goes down to match the board wiring. If installed incorrectly, the regulator is effectively dead.
 
 
 * Note: Resistor wattage ratings are currently and estimate.
