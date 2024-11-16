@@ -5,6 +5,18 @@ in any way, shape, or form and is only published for potential review.
 
 ## Status
 
+2024-11-16 - Regenerating PCB layout for new order.
+    * A whole bunch of minor changes that should fix the -22v boost converter.
+    * New switch foot print should allow for harvesting the original switch.
+    * Added jumpers for operation without the Arduino.
+
+2024-11-11 - Boards arrived!
+    * Fixed pin size and overall footprint on U2. The holes were too small and it was too close to the edge.
+    * Fixed diode pin sizes, I had DO-41 and the diodes are actually D201AD.
+    * The whole -22v boost converter doesn't work ....
+    * Fixed incorrect inductor connections for negative boost converter
+    * Fixed R6 and R4 being reversed.
+
 2024-11-05 - Just ordered a set of boards via JLCPCB. I'll update when they are received and tested.
 
 ![Rev 1 circuit diagram](Tandy1400PSU-Rev1.png?raw=true "Rev1 PSU")
