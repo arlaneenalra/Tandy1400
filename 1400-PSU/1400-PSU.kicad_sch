@@ -6935,7 +6935,7 @@
 	)
 	(text "-22V Adjustable Boost Converter"
 		(exclude_from_sim no)
-		(at 224.282 35.306 0)
+		(at 224.028 31.242 0)
 		(effects
 			(font
 				(size 1.27 1.27)

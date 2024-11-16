@@ -9,6 +9,7 @@ in any way, shape, or form and is only published for potential review.
     * A whole bunch of minor changes that should fix the -22v boost converter.
     * New switch foot print should allow for harvesting the original switch.
     * Added jumpers for operation without the Arduino.
+    * Screw holes are now actually grounded.
 
 2024-11-11 - Boards arrived!
     * Fixed pin size and overall footprint on U2. The holes were too small and it was too close to the edge.
@@ -21,6 +22,10 @@ in any way, shape, or form and is only published for potential review.
 
 ![Rev 1 circuit diagram](Tandy1400PSU-Rev1.png?raw=true "Rev1 PSU")
 ![Rev 1 board layout](Tandy1400PSU-Board-Rev1.png?raw=true "Rev1 PSU Board")
+
+# Ordering Boards
+
+I recommend 1.6mm boards with 2oz copper. The pre-generated gerbers should be sufficient.
 
 # Solder Jumpers
 
