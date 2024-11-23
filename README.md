@@ -5,6 +5,14 @@ in any way, shape, or form and is only published for potential review.
 
 ## Status
 
+2024-11-23 - Next iteration of the board arrived
+    * Switch footprint works but is backwards to the original
+    * 15v converter still too close to the edge, needs to come in about 2~3mm
+    * -22v rail seems to go between -30v and -27v, need to adjust the values a bit.
+    * Battery wire holes are too small.
+    * USB connected to the Arduino Nano can feed power into the dc in bus. It won't feed into the USB connector because of a diode in the Nano, but could power the 15v converter off of the USB port, less than ideal.
+    * Hmm, cooked the charger board when tried to plug in while on battery power. Not sure why.
+
 2024-11-16 - Regenerating PCB layout for new order.
 * A whole bunch of minor changes that should fix the -22v boost converter.
 * New switch foot print should allow for harvesting the original switch.
@@ -67,10 +75,10 @@ just short these two jumpers and it should stop the machine from continuously re
   * https://www.digikey.com/en/products/detail/jst-sales-america-inc/EHR-15/527237
   * https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASEHSEH22K152/6009479
 * L1 - 330uH Inductor
-* R1, R4 - 1k 1/4w
+* R1, R6 - 1k 1/4w
 * R2, R5, R8 - 10k 1/4w
 * R3 - 1 1/4w 
-* R6 - 20k 1/4w
+* R4 - 15k 1/4w
 * R7, R9 - 150k 1/4w
 * RV1 - 4.7k Trimmer 3296Y-1-472 or equivalent - https://www.digikey.com/en/products/detail/bourns-inc/3296Y-1-472/2536015 you want one with the adjustment on top or facing to the outer edge of the board when installed.
 * SW1 - Z4418-ND - https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/A8L-21-12N2/1811713
