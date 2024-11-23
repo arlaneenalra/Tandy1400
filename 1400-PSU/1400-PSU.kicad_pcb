@@ -10471,7 +10471,7 @@
 	(footprint "MountingHole:MountingHole_3.5mm_Pad_TopBottom"
 		(layer "F.Cu")
 		(uuid "8e61f3b7-d00d-4934-97d3-a9b6259e3879")
-		(at 74.69 66.52)
+		(at 74.69 66.25)
 		(descr "Mounting Hole 3.5mm")
 		(tags "mounting hole 3.5mm")
 		(property "Reference" "H4"
