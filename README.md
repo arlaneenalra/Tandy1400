@@ -6,12 +6,12 @@ in any way, shape, or form and is only published for potential review.
 ## Status
 
 2024-11-23 - Next iteration of the board arrived
-    * Switch footprint works but is backwards to the original
-    * 15v converter still too close to the edge, needs to come in about 2~3mm
-    * -22v rail seems to go between -30v and -27v, need to adjust the values a bit.
-    * Battery wire holes are too small.
-    * USB connected to the Arduino Nano can feed power into the dc in bus. It won't feed into the USB connector because of a diode in the Nano, but could power the 15v converter off of the USB port, less than ideal.
-    * Hmm, cooked the charger board when tried to plug in while on battery power. Not sure why.
+* Switch footprint works but is backwards to the original
+* 15v converter still too close to the edge, needs to come in about 2~3mm
+* -22v rail seems to go between -30v and -27v, need to adjust the values a bit.
+* Battery wire holes are too small.
+* USB connected to the Arduino Nano can feed power into the dc in bus. It won't feed into the USB connector because of a diode in the Nano, but could power the 15v converter off of the USB port, less than ideal.
+* Hmm, cooked the charger board when tried to plug in while on battery power. Not sure why.
 
 2024-11-16 - Regenerating PCB layout for new order.
 * A whole bunch of minor changes that should fix the -22v boost converter.
