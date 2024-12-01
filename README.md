@@ -3,6 +3,12 @@
 A very rough potential replacement for a Tandy 1400 PSU. At this point the board has not been tested 
 in any way, shape, or form and is only published for potential review.
 
+> [!CAUTION]
+> **Do not use the 12V 1.2A power brick that comes witht the Tandy 1400FD (Catalog Number 25-3501).**
+> This power brick is a simple unregulated supply that may output much higher voltages than the rated 12v. The unit I examined would outpout 15.86v unloaded. The maximum input voltages for the MEZD41502A-C 15v DC-DC converter is 13v and I have no idea what would happen if it saw 15.86v instead.
+>
+> The power adapter from the 1400HD model (12v 2.2A Catalog Number 25-3505) appears to be better regulated and is what I've been using for testing.
+
 ## Status
 
 2024-11-24 - Bug fixes
