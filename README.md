@@ -11,6 +11,11 @@ in any way, shape, or form and is only published for potential review.
 
 ## Status
 
+2024-12-01 - Bug fixes
+* This should finally fix the MEZD41502A-C footprint.
+* Validated the board in "wall power only" configuration.
+* At this point, the basic design has been shown to work. I'm not going to order more boards until I have a fix for the [availability issue](https://github.com/arlaneenalra/Tandy1400/issues/3).
+
 2024-11-24 - Bug fixes
 * Reversed the switch footprint. - Should orient the stock switch correctly now.
 * Reversed the 15v converter and pulled in slightly from the edge of the board. This should avoid solder joints on the back of the module being too close to the shield.
