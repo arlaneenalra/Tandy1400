@@ -94,6 +94,7 @@ just short these two jumpers and it should stop the machine from continuously re
 * U2 - MEZD41502A-C - 15V DC/DC boost converter (Digikey says it's obsolete, manufacturer didn't last I checked.) - https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MEZD41502A-C/6823857
 * U3 - MEZD72401A-G - Drop in replacement for a TO-220-3 LM7805 - https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MEZD72401A-G/6823842
   * This is a 7805 equivalent rated for 1A. You could theoretically put a 7805 here, but you'd need to keep in mind heat dissipation and efficiency.
+  * An alternative https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MEZD71201A-G/6823821 Should also work, really, this just needs to handle the 15v input voltage, match the 7805 pin out, and support up to 1A load.
 * U4 - LM340T-12 - Note: This is powered off of a 15V rail so you'll probably need an actual linear regulator.
   * DO NOT try to use an N7812-1PH in place of the LM340T-12, this part needs a minimum of 20V to produce a +12V supply and has been seen to dump 36V out when under-voltaged.
 * U5 - N7812-1PH - +/- 12V DC/DC Converter Used to generate -12V, cannot be used for +12V with a 15V supply. - https://www.digikey.com/en/products/detail/mean-well-usa-inc/N7812-1PH/22119016 
