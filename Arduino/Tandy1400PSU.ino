@@ -1,18 +1,18 @@
-// For this board setup with a 200k/100k voltage divder I'm getting a consistent .01366V per unit.
-// This gives us a voltage of roughly 13.98 at 1024.
+// For this board setup with a 200k/150k voltage divder I'm getting a consistent 0.0107v  per unit.
+// This puts 12v right at the the very top of our range though my Arduino seems to handle that ok.
 
-// For a 2s battery anything the maximum charge voltage is roughly 8.4v which gives us 615 as fully charged.
-// For mostly discharged we're somewhere around 512 which gives us a range of about 103 give or take.
-// Note: There's an extra silcon diode in inbetween the battery and the sense line so we're really seeing
-// about .7v less than what it expects.
 
-// The charger is supposed to be 12v but we'll bank on about 11v as a threshold. i.e. 805 give or take.
+// For a 2s battery anything the maximum charge voltage is roughly 8.4v which gives us 722 as fully charged.
+// The Tandy 1400 seems to cut out around 6.7~6.6 and not want to start up again, at least with the pack I'm
+// using. That puts "Dead Dead" at around 6.7v.
+// For mostly discharged we're somewhere around 575 which gives us a range of about 150 give or take.
 
-#define ON_CHARGER 750
+#define ON_CHARGER 900
 
-#define DIODE_OFFSET 52
-#define LOW_BATTERY (400 - DIODE_OFFSET)
-#define REALLY_LOW_BATTERY (390 - DIODE_OFFSET)
+#define DEAD_BATTERY 575
+#define REALLY_LOW_BATTERY 600
+#define LOW_BATTERY 620
+#define FULL_BATTERY 722
 
 const int sensePin = A0;
 const int chargerSensePin = A1;
