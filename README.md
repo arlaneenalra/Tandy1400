@@ -113,7 +113,7 @@ just short these two jumpers and it should stop the machine from continuously re
 * A1 - 5v Arduino Nano (ATmega 328p based was used in prototype)
   * 2.54mm pin heade for the Arduino (28 pins)
   * R7, R9 - 150k 1/4w
-  * R5, R8 - 10k 1/4w
+  * R5, R8 - 200k 1/4w
 
 * Battery Power
   * J1 - Jumper lead for battery connection. Size to match pack but should be able to handle at least 2A. (Through holes are sized for 18guage)

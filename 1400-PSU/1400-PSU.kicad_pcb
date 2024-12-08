@@ -5250,7 +5250,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "200k"
 			(at 2.54 2.52 0)
 			(layer "F.Fab")
 			(uuid "0a37d55b-56e6-4373-aa99-fa5b71c5dd45")
@@ -11443,7 +11443,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "200k"
 			(at 2.54 2.52 0)
 			(layer "F.Fab")
 			(uuid "6e98b307-da81-4e81-a3ed-03353c8615f1")
