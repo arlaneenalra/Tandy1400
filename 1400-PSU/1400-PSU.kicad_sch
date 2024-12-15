@@ -8921,7 +8921,7 @@
 				)
 			)
 		)
-		(property "Value" "47uF 50V"
+		(property "Value" "100uF 50V"
 			(at 171.831 35.56 90)
 			(effects
 				(font

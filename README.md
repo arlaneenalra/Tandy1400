@@ -11,6 +11,10 @@ in any way, shape, or form and is only published for potential review.
 
 ## Status
 
+2024-12-15 - Bug Fixes
+* Upped C2 to 100uF, 47 seems to not quite be enough for the LCD to work well, you get some fading and potentially contrast issues.
+* Ordered potentially replacement for the 15v DC-DC converter, if it works, I'll add the converter module to the repo and start an SMD version of the board.
+
 2024-12-01 - Bug fixes
 * This should finally fix the MEZD41502A-C footprint.
 * Validated the board in "wall power only" configuration.
@@ -66,8 +70,7 @@ just short these two jumpers and it should stop the machine from continuously re
 # Parts List
 
 ## Required
-* C1 - 100uF 50V
-* C2 - 47uF 50V
+* C1, C2 - 100uF 50V
 * C3 - 220pf
 * C4 - 0.1uF
 * C5 - 22uF 25V
