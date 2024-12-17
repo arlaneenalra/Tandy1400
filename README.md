@@ -120,7 +120,8 @@ just short these two jumpers and it should stop the machine from continuously re
 
 * Battery Power
   * J1 - Jumper lead for battery connection. Size to match pack but should be able to handle at least 2A. (Through holes are sized for 18guage)
-  * D1 - 31DQ06 - 3A Power Diode 
+  * D1 - 31DQ06 - 3A Power Diode
+  * D5 - 1N5819 - Schottky DO15 40V 1A 150C - This is like way overrated. I've been semi-successful with a 1N4148.
   * Q1 - IRF9540N P-Channel MOSFET in TO-220-3 - http://www.irf.com/product-info/datasheets/data/irf9540n.pdf
   * R1 - 1k 1/4w
   * R2 - 10k 1/4w

@@ -134,7 +134,7 @@
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -536,6 +536,7 @@
       "Net-(D1-K)": "HI_POWER",
       "Net-(D3-K)": "MED_POWER",
       "Net-(D4-A)": "HI_POWER",
+      "Net-(D5-A)": "MED_POWER",
       "Net-(F1-Pad2)": "HI_POWER",
       "Net-(JP2-A)": "HI_POWER",
       "Net-(U1-Driver_Collector)": "MED_POWER",

@@ -5788,7 +5788,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 80.01) (xy 97.79 80.01)
+			(xy 129.54 80.01) (xy 116.84 80.01)
 		)
 		(stroke
 			(width 0)
@@ -6125,6 +6125,16 @@
 			(type default)
 		)
 		(uuid "6e7595a5-dd55-49f9-a0bd-4a9c0ec6e546")
+	)
+	(wire
+		(pts
+			(xy 109.22 80.01) (xy 97.79 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7354d3df-591a-4dbd-a4ca-aa37c7860756")
 	)
 	(wire
 		(pts
@@ -8003,6 +8013,29 @@
 		(uuid "bcdb1b82-6947-426d-9529-84a4a7e9c080")
 		(property "Netclass" "HI_POWER"
 			(at 75.6285 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 120.65 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c3f7cc65-e893-4a0d-99a6-9eafb92512a6")
+		(property "Netclass" "MED_POWER"
+			(at 121.3485 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10601,6 +10634,74 @@
 			(project ""
 				(path "/1e170452-a7b5-4944-9251-2ce18f45a364"
 					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5819")
+		(at 113.03 80.01 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8824568a-4eb0-46df-973f-22484c6003cc")
+		(property "Reference" "D5"
+			(at 113.3475 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N5819"
+			(at 113.3475 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 113.03 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 113.03 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 113.03 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c411a99e-8b4c-4e96-a0a0-a9ad65e18371")
+		)
+		(pin "1"
+			(uuid "562224c3-3c4c-462f-92bf-f6585cba7751")
+		)
+		(instances
+			(project "1400-PSU"
+				(path "/1e170452-a7b5-4944-9251-2ce18f45a364"
+					(reference "D5")
 					(unit 1)
 				)
 			)
